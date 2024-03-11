@@ -1,0 +1,17 @@
+.res-card {
+    width: 200px;
+    padding: 10px;
+    margin: 0 22px 40px 22px;
+    background-color: #f0f0f0;
+    border: 1px solid #fff;
+}
+.res-card:hover {
+    cursor: pointer;
+    border: 1px solid #000;
+}
+.res-logo {
+    width: 100%;
+}
+.res-card h3, h4 {
+    margin: 10px 0;
+}
