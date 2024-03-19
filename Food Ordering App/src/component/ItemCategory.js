@@ -23,7 +23,7 @@ export default function ItemCategory({items, toggleItem}) {
     return (
         <ul>
             {itemCategories && itemCategories.map((category, index) => (
-                <ul key={category?.title} className="m-5 px-2">
+                <ul key={category?.title} className="my-1 mx-5">
                     <div className="w-full bg-gray-50 border-b border-gray-300 p-2">
                         <div className={`flex justify-between cursor-pointer`} onClick={() => handleClick(index)}>
                             <span className="p-1">

@@ -1,7 +1,14 @@
+import { useDispatch } from 'react-redux';
+import { addItem } from "../store/cartSlice.js";
 import { CDN_URL } from "../utils/constants.js";
 
 export default function CategoryItemList({list}) {
     const items = list?.itemCards;
+    const dispatch = useDispatch();
+
+    function handleAddItem(item) {
+        dispatch(addItem(item));
+    }
 
     return (
         <ul>
@@ -32,6 +39,7 @@ export default function CategoryItemList({list}) {
                                         className={`
                                             font-bold py-2 px-8 mx-5 bg-white rounded-lg text-green-500 hover:shadow-xl border border-gray-400
                                         `}
+                                        onClick={() => handleAddItem(item)}
                                     >
                                         Add
                                     </button>

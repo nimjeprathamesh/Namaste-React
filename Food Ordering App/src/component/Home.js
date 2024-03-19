@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import useCard from '../hook/useCard.js';
+import useOnlineStatus from '../hook/useOnlineStatus.js';
 import UserContext from '../store/UserContext.js';
 import Error from './UI/Error.js';
 import RestaurantCard, { withPromotedLabel } from "./card/RestaurantCard.js";
-import useCard from './hook/useCard.js';
-import useOnlineStatus from './hook/useOnlineStatus.js';
 import HomeShimmer from './shimmer/HomeShimmer.js';
 
 export default function Home() {

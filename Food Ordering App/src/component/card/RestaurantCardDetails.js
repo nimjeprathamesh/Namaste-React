@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import useCardDetails from '../hook/useCardDetails.js';
+import useCardDetails from '../../hook/useCardDetails.js';
 import MenuShimmer from '../shimmer/MenuShimmer.js';
 import RestaurantCategory from './RestaurantCategory.js';
 
