@@ -14,6 +14,7 @@ export default function CategoryItemList({list}) {
         <ul>
             {list && items.map((item) => {
                 const info = item?.card?.info;
+                console.log(info);
                 return (
                     <li className='mx-4 my-4 list-none shadow-lg shadow-gray-400' key={info.id}>
                         <div className='flex justify-between px-4 py-4'>
@@ -37,7 +38,8 @@ export default function CategoryItemList({list}) {
                                 <div className={`relative ${info.imageId ? 'bottom-6' : 'top-6'}`}>
                                     <button
                                         className={`
-                                            font-bold py-2 px-8 mx-5 bg-white rounded-lg text-green-500 hover:shadow-xl border border-gray-400
+                                            font-bold py-2 px-8 mx-4 bg-white rounded-lg text-green-500
+                                            hover:shadow-xl border border-gray-400 hover:bg-green-500 hover:text-white
                                         `}
                                         onClick={() => handleAddItem(item)}
                                     >

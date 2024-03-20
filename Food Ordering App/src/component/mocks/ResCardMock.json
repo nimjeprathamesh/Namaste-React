@@ -1,0 +1,83 @@
+{
+    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+    "info": {
+        "id": "306639",
+        "name": "The Coorg Food Co.",
+        "city": "1",
+        "slugs": {
+            "restaurant": "the-coorg-food-co.-koramangala-koramangala",
+            "city": "bangalore"
+        },
+        "cloudinaryImageId": "ej90ytd5x7ffyl6ii7cn",
+        "address": "No 466, Ground floor shop, 17th G main, 6th block, 80 feet road, opp BMTC Bus Depot, Koramangala, Bangalore",
+        "locality": "6th Block",
+        "areaName": "Koramangala",
+        "costForTwo": "75000",
+        "costForTwoMessage": "₹750 FOR TWO",
+        "cuisines": [
+            "South Indian"
+        ],
+        "avgRating": 4.3,
+        "feeDetails": {},
+        "avgRatingString": "4.3",
+        "totalRatingsString": "1K+",
+        "promoted": true,
+        "adTrackingId": "cid=12040591~p=0~adgrpid=12040591#ag1~mp=SWIGGY_IN~bl=FOOD~eid=231794c8-0f2c-41c5-843b-788d9aa8b7ca~aet=RESTAURANT~aeid=306639~srvts=1710926311508~st=promoted foods",
+        "sla": {
+            "deliveryTime": 24,
+            "minDeliveryTime": 20,
+            "maxDeliveryTime": 25,
+            "lastMileTravel": 0.7,
+            "serviceability": "SERVICEABLE",
+            "rainMode": "RAIN_MODE_NONE",
+            "slaString": "20-25 MINS",
+            "lastMileTravelString": "0.6 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "opened": true,
+            "restaurantClosedMeta": {}
+        },
+        "badges": {},
+        "aggregatedDiscountInfoV3": {
+            "header": "10% OFF",
+            "subHeader": "UPTO ₹40"
+        },
+        "ratingSlab": "RATING_SLAB_5",
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "cartOrderabilityNudgeBanner": {
+            "parameters": {},
+            "presentation": {}
+        },
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {
+        "screenName": "explore",
+        "context": "{\"tid\":\"null\",\"grid\":\"480afe8a-4178-4da6-8c2f-da7bb69c0bc0\",\"queryUniqueId\":\"43b72929-7723-cabd-042b-efb1d10d8db7\",\"query\":\"promoted foods\",\"adTrackingId\":\"cid=12040591~p=0~adgrpid=12040591#ag1~mp=SWIGGY_IN~bl=FOOD~eid=231794c8-0f2c-41c5-843b-788d9aa8b7ca~aet=RESTAURANT~aeid=306639~srvts=1710926311508~st=promoted foods\"}",
+        "objectValue": "306639",
+        "impressionObjectName": "impression-restaurant-ad",
+        "clickObjectName": "click-restaurant-ad"
+    },
+    "ctaWithParams": {
+        "link": "swiggy://menu",
+        "type": "DEEPLINK",
+        "params": {
+            "restaurant_id": "306639",
+            "query": "promoted foods",
+            "sourceSessionId": "ct2bf833-f217-4079-b56f-7c00d9ef9bed",
+            "source": "SEARCH",
+            "isSld": "false",
+            "sourceRequestId": "65faa9e61b701131928b0b982c5c1823"
+        }
+    }
+}

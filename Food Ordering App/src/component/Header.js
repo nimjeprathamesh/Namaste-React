@@ -27,14 +27,14 @@ export default function Header() {
             <div>
                 {!logoLoaded && <LogoShimmer />}
                 <img
-                    className={`w-36 ${logoLoaded ? 'visible' : 'hidden'}`}
+                    className={`w-32 ${logoLoaded ? 'visible' : 'hidden'}`}
                     src={LOGO_URL}
                     alt='res-logo'
                     onLoad={handleLogoLoad}
                 />
             </div>
             <div className='flex items-center'>
-                <ul className='flex p-4 m-4 mr-0'>
+                <ul className='flex p-4'>
                     <li className='px-4'>
                         <p>Online Status: {onlineStatus ? "✅" : "🔴"}</p>
                     </li>
@@ -45,7 +45,7 @@ export default function Header() {
                                 className={({isActive}) => (
                                     isActive ?
                                     'text-white font-bold px-3 py-2 bg-pink-500 rounded-md shadow-md shadow-gray-400' :
-                                    'px-3 py-3'
+                                    'px-3 py-2'
                                 )}
                             >
                                 {item.name === 'Cart' ? `${item.name}(${cartItems.length})` : item.name}

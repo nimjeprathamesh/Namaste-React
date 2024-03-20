@@ -5,6 +5,7 @@ export default function RestaurantCard(props) {
 
     return (
         <div
+            data-testid="resCard"
             className='m-2 p-3 w-[250px] bg-gray-100 shadow-xl border hover:bg-gray-200 rounded-lg'
         >
             <img
@@ -15,7 +16,7 @@ export default function RestaurantCard(props) {
             <h3 className='font-bold py-4 text-lg'>{card.name}</h3>
             <h4>{card.cuisines.join(", ")}</h4>
             <h4>⭐{card.avgRating || card?.avgRatingString}</h4>
-            <h4>{card.costForTwo}</h4>
+            <h4>Rs.{card.costForTwo/100}</h4>
             <h4>{card.sla.slaString}</h4>
         </div>
     );

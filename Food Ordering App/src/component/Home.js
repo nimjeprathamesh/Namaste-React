@@ -24,6 +24,7 @@ export default function Home() {
                     <input
                         className='border border-gray-400 mx-2 py-1 px-2 rounded-lg'
                         type='search'
+                        data-testid='searchInput'
                         placeholder='Search the restaurant'
                         value={search}
                         onChange={handleChange}
