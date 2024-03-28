@@ -1,4 +1,4 @@
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser, faEnvelope, faEye, faEyeSlash, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import useLogin from "../hooks/useLogin.js";
@@ -21,50 +21,62 @@ export default function Login() {
     return (
         <div className='w-full min-h-screen bg-cover bg-no-repeat text-white' style={BackgroundImage}>
             <Header />
-            <form className='ml-[29rem] bg-black bg-opacity-80 w-4/12 px-14 py-6 rounded-md' onSubmit={handleSubmit}>
+            <form
+                className='ml-[29rem] bg-black bg-opacity-80 w-4/12 px-14 py-6 rounded-md relative top-20'
+                onSubmit={handleSubmit}
+            >
                 <h1 className='font-bold text-4xl m-6 ml-0'>
                     {!isSignIn ? 'Sign Up' : 'Sign In'}
                 </h1>
                 {!isSignIn && (
+                    <div className="relative">
+                        <input
+                            ref={name}
+                            type='text'
+                            placeholder='Name'
+                            className={`
+                                p-3 pl-12 w-full border border-gray-400 rounded-md bg-gray-700 bg-opacity-30
+                                ${errorMessage.name ? 'mt-4' : 'my-4'}
+                            `}
+                            required
+                        />
+                        <FontAwesomeIcon icon={faCircleUser} className="absolute top-[2.15rem] left-4 text-gray-400" />
+                    </div>
+                )}
+                <div className="relative">
                     <input
-                        ref={name}
+                        ref={email}
                         type='text'
-                        placeholder='Name'
+                        placeholder='Email'
                         className={`
-                            p-3 w-full border border-gray-400 rounded-md bg-gray-700 bg-opacity-30
-                            ${errorMessage.name ? 'mt-4' : 'my-4'}
+                            p-3 pl-12 w-full border border-gray-400 rounded-md bg-gray-700 bg-opacity-30
+                            ${errorMessage.email.length ? 'mt-4' : 'my-4'}
                         `}
                         required
                     />
-                )}
-                <input
-                    ref={email}
-                    type='text'
-                    placeholder='Email'
-                    className={`
-                        p-3 w-full border border-gray-400 rounded-md bg-gray-700 bg-opacity-30
-                        ${errorMessage.email.length ? 'mt-4' : 'my-4'}
-                    `}
-                    required
-                />
+                    <FontAwesomeIcon icon={faEnvelope} className="absolute top-[2.15rem] left-4 text-gray-400" />
+                </div>
                 {errorMessage.email && errorMessage.email.map((error, index) => (
                     <p key={index} className='text-red-600 w-full'>{error}</p>
                 ))}
-                <input
-                    ref={password}
-                    type={togglePassword ? 'text' : 'password'}
-                    placeholder='Password'
-                    className={`
-                        p-3 w-full border border-gray-400 rounded-md bg-gray-700 bg-opacity-30
-                        ${errorMessage.password.length || errorMessage.general ? 'mt-4' : 'my-4'}
-                    `}
-                    required
-                />
-                <FontAwesomeIcon
-                    icon={togglePassword ? faEye : faEyeSlash}
-                    className="absolute mt-8 right-[32.3rem] cursor-pointer"
-                    onClick={handleToggleIcon}
-                />
+                <div className="relative">
+                    <input
+                        ref={password}
+                        type={togglePassword ? 'text' : 'password'}
+                        placeholder='Password'
+                        className={`
+                            p-3 pl-12 w-full border border-gray-400 rounded-md bg-gray-700 bg-opacity-30
+                            ${errorMessage.password.length || errorMessage.general ? 'mt-4' : 'my-4'}
+                        `}
+                        required
+                    />
+                    <FontAwesomeIcon
+                        icon={togglePassword ? faEye : faEyeSlash}
+                        className="absolute top-8 right-4 text-gray-400 cursor-pointer"
+                        onClick={handleToggleIcon}
+                    />
+                    <FontAwesomeIcon icon={faLock} className="absolute top-[2.15rem] left-4 text-gray-400" />
+                </div>
                 {errorMessage.password && errorMessage.password.map((error, index) => (
                     <p key={index} className='text-red-600 w-full'>{error}</p>
                 ))}

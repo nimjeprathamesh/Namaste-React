@@ -6,3 +6,15 @@ export const Logo = 'https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897
 
 
 export const User_Icon = "https://occ-0-2087-2186.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229";
+
+export const User_Avatar = "https://avatars.githubusercontent.com/u/144525633?v=4";
+
+export const API_Options = {
+    method: "GET",
+    headers: {
+        accept: "application/json",
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZjUxNDA2YjMyM2RhZDhjYzk1OTQ4YzAyNmNkZWE2NCIsInN1YiI6IjY2MDI5ODczMDQ3MzNmMDE2NGViNzZlYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.krpSEMmWRFl0ycjw0sqXT2TRJmmGmuunQsi85d0yGro"
+    },
+};
+
+export const Img_CDN_URL = "https://image.tmdb.org/t/p/original";

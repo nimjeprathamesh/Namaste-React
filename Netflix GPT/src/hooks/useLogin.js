@@ -1,9 +1,9 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { addUser } from '../slice/userSlice.js';
+import { User_Avatar } from "../utils/constants.js";
 import { auth } from '../utils/firebase.js';
-import { addUser } from '../utils/userSlice.js';
 import CheckValidData from '../utils/validation.js';
 
 export default function useLogin() {
@@ -14,7 +14,6 @@ export default function useLogin() {
         general: ''
     });
     const [togglePassword, setTogglePassword] = useState(false);
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const name = useRef(null);
@@ -43,21 +42,17 @@ export default function useLogin() {
                 .then((userCredential) => {
                     // Signed up
                     const user = userCredential.user;
-
                     updateProfile(user, {
                         displayName: name.current.value,
-                        photoURL: "https://avatars.githubusercontent.com/u/144525633?v=4"
+                        photoURL: User_Avatar,
                     }).then(() => {
+                        const {uid, email, displayName, photoURL} = auth.currentUser;
                         dispatch(addUser({
-                            uid: user.uid,
-                            email: user.email,
-                            displayname: user.displayName,
-                            photoURL: user.photoURL,
+                            uid: uid,
+                            email: email,
+                            displayname: displayName,
+                            photoURL: photoURL,
                         }));
-                        name.current.value = '';
-                        email.current.value = '';
-                        password.current.value = '';
-                        setIsSignIn(true);
                     }).catch((error) => {
                         setErrorMessage({ ...errorMessage, general: error.message });
                     });
@@ -67,7 +62,6 @@ export default function useLogin() {
                     let errorText = error.message;
                     if (errorCode === 'auth/email-already-in-use') {
                         errorText = 'Email already in use.';
-                        console.log(errorText);
                     }
                     setErrorMessage({ email: [errorText], password: [], general: '' });
                 });
@@ -76,14 +70,12 @@ export default function useLogin() {
                 .then((userCredential) => {
                     // Signed in
                     const user = userCredential.user;
-                    console.log(user);
                     dispatch(addUser({
                         uid: user.uid,
                         email: user.email,
                         displayname: user.displayName,
                         photoURL: user.photoURL,
                     }));
-                    navigate("/browser");
                 })
                 .catch((error) => {
                     const errorCode = error.code;
