@@ -4,6 +4,7 @@ import React from 'react';
 import useLogin from "../hooks/useLogin.js";
 import { BackgroundImage } from '../utils/constants.js';
 import Header from "./Header.js";
+import Button from "./UI/button.js";
 
 export default function Login() {
     const {
@@ -83,15 +84,14 @@ export default function Login() {
                 {errorMessage.general && (
                     <p className='text-red-600 w-full'>{errorMessage.general}</p>
                 )}
-                <button
+                <Button
                     type='submit'
                     className={`
                         p-2 ml-0 bg-red-600 font-bold w-full rounded-md hover:bg-red-800
                         ${errorMessage.password.length || errorMessage.general ? 'mt-4' : 'm-2'}
                     `}
-                >
-                    {!isSignIn ? 'Sign Up' : 'Sign In'}
-                </button>
+                    children={!isSignIn ? 'Sign Up' : 'Sign In'}
+                />
                 <p className='my-4 cursor-pointer text-shadow hover:text-gray-400' onClick={toggleSignInForm}>
                     {isSignIn ? "New to Netflix? Sign Up Now" : "Already registered? Sign In Now"}
                 </p>

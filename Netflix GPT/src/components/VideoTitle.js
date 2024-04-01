@@ -1,6 +1,7 @@
 import { faInfoCircle, faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import Button from "./UI/button.js";
 
 export default function VideoTitle({title, overview}) {
     return (
@@ -10,19 +11,18 @@ export default function VideoTitle({title, overview}) {
             </h1>
             <p className="py-6 w-1/3 text-white">{overview}</p>
             <div>
-                <button className="px-6 mr-6 py-2 rounded-md shadow-lg bg-white font-bold hover:bg-opacity-70">
+                <Button className="px-6 mr-6 py-2 rounded-md shadow-lg bg-white font-bold hover:bg-opacity-70">
                     <FontAwesomeIcon icon={faPlay} className="text-lg" />
                     &nbsp;Play
-                </button>
-                <button
-                    className="px-6 py-2 bg-gray-600 rounded-md shadow-lg hover:bg-opacity-50 font-bold text-white"
+                </Button>
+                <Button
+                    className=
+                        "px-6 py-2 bg-gray-600 rounded-md bg-opacity-30 shadow-lg font-bold text-white hover:bg-opacity-15"
                 >
                     <FontAwesomeIcon icon={faInfoCircle} className="text-lg text-white " />
                     &nbsp;More Info
-                </button>
+                </Button>
             </div>
         </div>
     );
 }
-
-//02:37:27

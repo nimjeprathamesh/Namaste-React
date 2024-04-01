@@ -1,7 +1,8 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { changeLanguage } from "../slice/configSlice.js";
 import { toggleGPTSearchView } from "../slice/gptSlice.js";
 import { addUser, removeUser } from '../slice/userSlice.js';
 import { auth } from '../utils/firebase.js';
@@ -10,6 +11,7 @@ export default function useHeader() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [user, setUser] = useState(null);
+    const showGPTSearch = useSelector((store) => store.gpt?.showGPTSearch);
 
     function handleSignOut() {
         signOut(auth).then(() => {})
@@ -45,7 +47,12 @@ export default function useHeader() {
         dispatch(toggleGPTSearchView());
     }
 
+    function handleLanguageChange(event) {
+        event.preventDefault();
+        dispatch(changeLanguage(event.target.value));
+    }
+
     return {
-        user, handleSignOut, handleGPTSearchClick
+        user, showGPTSearch, handleSignOut, handleGPTSearchClick, handleLanguageChange
     };
 }

@@ -12,7 +12,8 @@ export default function VideoBackground({movieId}) {
                 className='w-[84.3rem] aspect-video'
                 src={"https://www.youtube.com/embed/" + trailerVideo?.key + "?&autoplay=1&mute=1&vq=hd1080"}
                 title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow=
+                    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
             ></iframe>
         </div>
