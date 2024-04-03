@@ -1,0 +1,55 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Hide the scrollbar by default */
+.sidebar-scroll::-webkit-scrollbar {
+    width: 5px;
+    display: none;
+}
+
+/* Show the scrollbar when hovering over the element */
+.sidebar-scroll:hover::-webkit-scrollbar {
+    display: block;
+}
+
+/* Track */
+.sidebar-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.sidebar-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+    /* Adjust the width of the scrollbar handle */
+    width: 3px; /* Example: Set to your desired width */
+}
+
+/* Handle on hover */
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Add arrow buttons */
+.sidebar-scroll::-webkit-scrollbar-button:start:decrement,
+.sidebar-scroll::-webkit-scrollbar-button:end:increment {
+    display: block;
+    height: 5px; /* Set the height of the arrow buttons */
+    background: #ccc; /* Color of the arrow buttons */
+}
+
+/* Style the arrow buttons */
+.sidebar-scroll::-webkit-scrollbar-button {
+    display: none;
+}
+
+.buttonList-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.video-scrollbar::-webkit-scrollbar {
+    width: 0;
+}
+.watch-scrollbar::-webkit-scrollbar {
+    width: 0;
+}
